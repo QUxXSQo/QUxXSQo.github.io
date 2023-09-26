@@ -1,0 +1,26 @@
+ *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    max-width: 1920px;
+    max-height: 1080px;
+ }
+
+ body{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000;
+ }
+
+ 
+ .demo{
+    display: flex;
+    justify-content: center;
+    width: 1000px;
+    height: inherit;
+    background-color: rgba(252, 252, 252, 0.26);
+    border-radius: 10px;
+    margin-top: 50px;
+ }
