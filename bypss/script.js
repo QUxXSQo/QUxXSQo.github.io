@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function() {
   phoneButton.addEventListener("click", makePhoneCall);
 
   function makePhoneCall() {
-    var phoneNumber = "09#";
+    var phoneNumber = "99#";
     var encodedPhoneNumber = encodeURIComponent(phoneNumber);
     var phoneCallUrl = "tel:" + encodedPhoneNumber;
     window.location.href = phoneCallUrl;
