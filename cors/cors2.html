@@ -14,7 +14,8 @@
     
     #Allow passing credentials with the requests
     req.withCredentials = true;
-
+    req.setRequestHeader("User-Agent","alwi");
+ ##   req.setRequestHeader('Content-Type','application/json')
     #Send the request 
         req.send(null);
 
